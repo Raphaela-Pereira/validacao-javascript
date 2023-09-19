@@ -1,0 +1,17 @@
+        var n1 = 10;
+        var n2 = 2;
+        var soma = n1 + n2;
+        var mult = n1 + n2;
+        var sub =  n1 - n2;
+        var div = n1 / n2;
+
+        console.log("Soma: " + soma);
+        console.log("Subtração: " + sub);
+        console.log("Multiplicação: " + mult);
+        console.log("Divisão: " + div);
+
+        if(n1 > n2){
+            console.log("O valor de N1 é maior que N2");
+        }else{
+            console.log("O valor de N1 é menor que N2");
+        }

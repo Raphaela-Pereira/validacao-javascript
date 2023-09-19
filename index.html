@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script>
+        function validarDados(){
+            //Nome
+            if(document.getElementById("nome").value == ""){
+                console.log("O campo nome esta vazio!");
+            }else{
+                var tamanho = document.getElementById("nome").value.lenght;
+                //console.log("Tamanho: " + tamanho);
+                if( tamanho > 20){
+                    console.log("O campo nome esta muito grande!");
+                }
+            }
+
+            //Validar os campos endereço, bairro e cep
+            //Campo CEP precisa verificar a quantidade correta e obrigar o usário a colocar o -
+
+            //Endereço
+            if(document.getElementById("endereco").value == ""){
+                console.log("O campo endereço esta vazio!");
+            }else{
+                var tamanho = document.getElementById("endereco").value.lenght;
+                //console.log("Tamanho: " + tamanho);
+                if( tamanho > 20){
+                    console.log("O campo endereço esta muito grande!");
+                }
+            }
+
+            //Bairro
+            if(document.getElementById("bairro").value == ""){
+                console.log("O campo bairro esta vazio!");
+            }else{
+                var tamanho = document.getElementById("bairro").value.lenght;
+                //console.log("Tamanho: " + tamanho);
+                if( tamanho > 20){
+                    console.log("O campo bairro esta muito grande!");
+                }
+            }
+
+            //CEP
+            if(document.getElementById("cep").value == ""){
+                console.log("O campo CEP esta vazio!");
+            }else{
+                var tamanho = document.getElementById("cep").value.lenght;
+                //console.log("Tamanho: " + tamanho);
+                 if( tamanho < 9){
+                    console.log("O campo cep está faltando um");
+                }
+                else {
+                    var cepValor = document.getElementById('cep').value;
+                    //Expressões regulares
+                    var regex = /^\d{5}-\d{3}$/;
+                    var temHifen = regex.test(cepValor);
+                    if (temHifen) {
+                        console.log("O hífen está no lugar correto");
+                    }else{
+                        console.log("O hífen não está no lugar correto");
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Nome:<input type="text" name="nome" id="nome"><br>
+        Endereço:<input type="text" name="endereco" id="endereco"><br>
+        Bairro:<input type="text" name="bairro" id="bairro"><br>
+        Cep:<input type="text" name="cep" id="cep"><br>
+        <button type="button" name="cadastrar" id="cadastrar" onclick="validarDados()">Cadastrar</button>
+    </form>
+</body>
+</html>
